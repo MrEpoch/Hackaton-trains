@@ -2,14 +2,17 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
+import CardTravelIcon from '@mui/icons-material/CardTravel';
 import { useEffect, useState } from "react";
 import "./header.css";
 import { US, CZ, CH } from "country-flag-icons/react/3x2";
-import { Menu, MenuItem, Fade } from "@mui/material";
+import { Menu, MenuItem, Fade, Drawer, List, ListItem } from "@mui/material";
 
 export default function Header() {
   const [lang, setLang] = useState<string>("EN");
   const [langAnchor, setLangAnchor] = useState<null | HTMLElement>(null);
+  const [hiddenDrawer, setHiddenDrawer] = useState<boolean>(true);
+
   const open = Boolean(langAnchor);
 
   useEffect(() => {
@@ -210,7 +213,7 @@ export default function Header() {
         <button className="header__link_search">
           <SearchIcon />
         </button>
-        <button className="header__link_menu">
+        <button onClick={() => setHiddenDrawer(true)} className="header__link_menu">
           Menu <MenuIcon />
         </button>
       </div>
@@ -225,9 +228,21 @@ export default function Header() {
             className="header__lang"
           >
           {flag_array.map((flag, index) => {
-            return <MenuItem key={index} onClick={() => setLangAnchor(null)}>{flag.flag}</MenuItem>;
+            return <MenuItem className="header__lang_item" key={index} onClick={() => setLangAnchor(null)}>{flag.flag}</MenuItem>;
           })}
         </Menu>
+        <Drawer open={hiddenDrawer} onClose={() => setHiddenDrawer(false)} anchor="right">
+            <List>
+                {["Experiences", "Travel destinations", "About", "Contact", "Blog"].map((text, index) => (
+                    <ListItem key={index}>
+                        {if (index === 0) {
+                        } else {
+
+                        }}
+                    </ListItem>
+                ))}
+            </List>
+        </Drawer>
     </header>
   );
 }
