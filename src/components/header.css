@@ -1,0 +1,33 @@
+.trains-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: orangered;
+}
+
+.trains-header > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+.header__links {
+  display: flex;
+  gap: 10px;
+  background-color: black;
+  min-height: auto;
+}
+
+.header__lang {
+  display: flex;
+  padding: 5px;
+  gap: 10px;
+  background-color: black;
+  flex-direction: column;
+  min-height: auto;
+}
+
+.header__lang > * {
+  cursor: pointer;
+}

@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import "./App.css";
 import Header from "./components/header";
-import Landing from './components/landing';
+import Landing from "./components/landing";
 
 function App() {
   return (
     <>
-        <Header />        
-        <Landing />
+      <Header />
+      <Landing />
     </>
-  )
-} 
+  );
+}
 
-export default App
+export default App;
