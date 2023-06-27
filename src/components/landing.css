@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
 .trains__landing {
   min-height: 100%;
   width: 100%;
@@ -32,8 +35,18 @@
     filter: grayscale(30%);
     background-position: center;
     height: 700px;
+    display: grid;
     position: relative;
     background-attachment: fixed;
+}
+
+.trains__landing__image__text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    justify-self: center;
+    align-self: center;
+    color: black;
+    text-shadow: 0 0 2px var(--system-color);
 }
 
 .custom-shape-divider-bottom-1687887795 {
