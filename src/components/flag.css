@@ -1,0 +1,28 @@
+
+
+:root {
+    --black: #333;
+    --red: #e51400;
+    --yellow: #f8de1f;
+    --blue: #204e81;
+    --green: #339933;
+    --orange: #f89406;
+}
+
+.spain {
+	background: -webkit-linear-gradient(top, var(--red) 25%, var(--yellow) 25%, var(--yellow) 75%, var(--red) 75%);
+	background: linear-gradient(to bottom, var(--red) 25%, var(--yellow) 25%, var(--yellow) 75%, var(--red) 75%);
+} 
+
+.czech {
+	background: -webkit-linear-gradient(top, white 50%, var(--red) 50%);
+	background: linear-gradient(to bottom, white 50%, var(--red) 50%);		
+
+	.triangle {
+		width: 0;
+		height: 0;
+		border-left: 75px solid var(--blue);	
+		border-top: 75px solid transparent;
+		border-bottom: 75px solid transparent;
+	}
+}
