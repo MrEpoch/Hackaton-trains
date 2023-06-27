@@ -4,15 +4,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
 import "./header.css";
-import { US, CZ, SP, CH } from "country-flag-icons/react/3x2";
+import { US, CZ, CH } from "country-flag-icons/react/3x2";
+import { Menu, MenuItem, Fade } from "@mui/material";
 
 export default function Header() {
-  const [lang, setLang] = useState<string>("CZ");
-
-  const [hiddenLang, setHiddenLang] = useState<boolean>(true);
+  const [lang, setLang] = useState<string>("EN");
+  const [langAnchor, setLangAnchor] = useState<null | HTMLElement>(null);
+  const open = Boolean(langAnchor);
 
   useEffect(() => {
-    const valNavigator = navigator.language;
+    const valNavigator: string = navigator.language;
     if (valNavigator === "CZ") setLang("CZ");
     else if (valNavigator === "CH") setLang("CH");
     else setLang("EN");
@@ -193,8 +194,8 @@ export default function Header() {
       <div className="header__links">
         <button
           className="header__link_lang"
-          onClick={() => {
-            setHiddenLang(!hiddenLang);
+          onClick={(event) => {
+            setLangAnchor(event.currentTarget);
           }}
         >
           {lang && flag_array.filter((item) => item.lang === lang)[0].flag}
@@ -213,13 +214,20 @@ export default function Header() {
           Menu <MenuIcon />
         </button>
       </div>
-      {hiddenLang ? null : (
-        <div className="header__lang">
+        <Menu 
+            MenuListProps={{
+                'aria-labelledby': 'fade-button',
+            }}
+            open={open}
+            TransitionComponent={Fade}
+            onClose={() => setLangAnchor(null)}
+            anchorEl={langAnchor}
+            className="header__lang"
+          >
           {flag_array.map((flag, index) => {
-            return <div key={index}>{flag.flag}</div>;
+            return <MenuItem key={index} onClick={() => setLangAnchor(null)}>{flag.flag}</MenuItem>;
           })}
-        </div>
-      )}
+        </Menu>
     </header>
   );
 }

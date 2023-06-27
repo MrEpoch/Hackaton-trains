@@ -1,8 +1,9 @@
 .trains-header {
   display: flex;
   justify-content: space-around;
+  min-height: 100px;
   align-items: center;
-  background-color: orangered;
+  background-color: black;
 }
 
 .trains-header > h1 {
@@ -14,18 +15,35 @@
 
 .header__links {
   display: flex;
-  gap: 10px;
+  gap: 10%;
   background-color: black;
   min-height: auto;
+}
+
+.header__links > button {
+    background: transparent;
+    color: white;
+    border: none;
+    aspect-ratio: 1 / 1;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.header__links > button:hover {
+    color: #ccc;
+    background-color: #212121;
+    cursor: pointer;
 }
 
 .header__lang {
   display: flex;
   padding: 5px;
   gap: 10px;
+
   background-color: black;
   flex-direction: column;
-  min-height: auto;
+  width: 200px;
+  min-height: 200px;
 }
 
 .header__lang > * {
