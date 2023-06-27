@@ -1,3 +1,21 @@
 @media (max-width: 1600px) {
-  
+    .trains-header__logo {
+        width: 17rem;
+        aspect-ratio: 1 / 5;
+    }      
+}
+
+@media (max-width: 800px) {
+    .trains-header__logo {
+        width: 10rem;
+        aspect-ratio: 1 / 5;
+    }
+
+    .trains__landing__image__text {
+        font-size: 3.5rem!important;
+    }
+
+    .header__links {
+        width: auto!important;
+    }
 }

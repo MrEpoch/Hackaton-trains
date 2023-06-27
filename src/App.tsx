@@ -1,4 +1,5 @@
 import "./App.css";
+import "./components/responsive-components.css";
 import Header from "./components/header";
 import Landing from "./components/landing";
 import Information from "./components/info";

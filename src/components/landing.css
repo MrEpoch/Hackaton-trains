@@ -46,6 +46,7 @@
     justify-self: center;
     align-self: center;
     color: black;
+    text-align: center;
     text-shadow: 0 0 2px var(--system-color);
 }
 

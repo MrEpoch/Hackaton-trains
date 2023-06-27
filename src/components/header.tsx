@@ -66,6 +66,7 @@ export default function Header() {
         viewBox="0 0 410 50"
         enableBackground="new 0 0 410 50"
         xmlSpace="preserve"
+        className="trains-header__logo"
         style={{ cursor: "pointer" }}
       >
         <g>
