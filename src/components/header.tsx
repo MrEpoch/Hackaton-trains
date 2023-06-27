@@ -53,6 +53,7 @@ export default function Header() {
 
   return (
     <header className="trains-header">
+      <a href=".">
       <svg
         version="1.1"
         id="Layer_1"
@@ -63,8 +64,9 @@ export default function Header() {
         width="410px"
         height="50px"
         viewBox="0 0 410 50"
-        enable-background="new 0 0 410 50"
+        enableBackground="new 0 0 410 50"
         xmlSpace="preserve"
+        style={{ cursor: "pointer" }}
       >
         <g>
           <path
@@ -208,6 +210,7 @@ export default function Header() {
           />
         </g>
       </svg>
+      </a>
       <div className="header__links">
         <button
           className="header__link_lang"
