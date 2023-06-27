@@ -3,15 +3,20 @@ import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import CardTravelIcon from '@mui/icons-material/CardTravel';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import InfoIcon from '@mui/icons-material/Info';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+
 import { useEffect, useState } from "react";
 import "./header.css";
 import { US, CZ, CH } from "country-flag-icons/react/3x2";
-import { Menu, MenuItem, Fade, Drawer, List, ListItem } from "@mui/material";
+import { Menu, MenuItem, Fade, Drawer, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
 
 export default function Header() {
   const [lang, setLang] = useState<string>("EN");
   const [langAnchor, setLangAnchor] = useState<null | HTMLElement>(null);
-  const [hiddenDrawer, setHiddenDrawer] = useState<boolean>(true);
+  const [hiddenDrawer, setHiddenDrawer] = useState<boolean>(false);
 
   const open = Boolean(langAnchor);
 
@@ -36,6 +41,15 @@ export default function Header() {
       flag: <CH onClick={() => setLang("CH")} width={30} />,
     },
   ];
+
+  const menuIcons = [
+        <CardTravelIcon />,
+        <FmdGoodIcon />,
+        <InfoIcon />,
+        <ContactSupportIcon />,
+        <LocalLibraryIcon />
+
+  ]
 
   return (
     <header className="trains-header">
@@ -217,10 +231,8 @@ export default function Header() {
           Menu <MenuIcon />
         </button>
       </div>
-        <Menu 
-            MenuListProps={{
-                'aria-labelledby': 'fade-button',
-            }}
+        <Menu
+            MenuListProps={{ disablePadding: true }}
             open={open}
             TransitionComponent={Fade}
             onClose={() => setLangAnchor(null)}
@@ -228,17 +240,17 @@ export default function Header() {
             className="header__lang"
           >
           {flag_array.map((flag, index) => {
-            return <MenuItem className="header__lang_item" key={index} onClick={() => setLangAnchor(null)}>{flag.flag}</MenuItem>;
+            return <MenuItem  className="header__lang_item" key={index} onClick={() => setLangAnchor(null)}>{flag.flag}</MenuItem>;
           })}
         </Menu>
-        <Drawer open={hiddenDrawer} onClose={() => setHiddenDrawer(false)} anchor="right">
-            <List>
+        <Drawer className="trains-drawer" open={hiddenDrawer} onClose={() => setHiddenDrawer(false)} anchor="right">
+            <List className="trains-drawer__list">
                 {["Experiences", "Travel destinations", "About", "Contact", "Blog"].map((text, index) => (
-                    <ListItem key={index}>
-                        {if (index === 0) {
-                        } else {
-
-                        }}
+                    <ListItem className="trains-drawer__list-item" key={index}>
+                        <ListItemIcon style={{ color: "white" }}>
+                            {menuIcons[index]} 
+                        </ListItemIcon>
+                        <ListItemText primary={text} />
                     </ListItem>
                 ))}
             </List>

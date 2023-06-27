@@ -2,3 +2,24 @@
   min-height: 100svh;
   background: black;
 }
+
+.trains-drawer__list {
+    background-color: black;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.trains-drawer__list-item {
+    cursor: pointer;
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.trains-drawer__list-item:hover {
+    background-color: #333;
+}
