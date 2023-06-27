@@ -9,20 +9,23 @@
     --orange: #f89406;
 }
 
-.spain {
+.flag-icon {
+    position: relative;
+    display: inline-block;
+    width: 1.33333333em;
+    height: 1em;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.SP {
 	background: -webkit-linear-gradient(top, var(--red) 25%, var(--yellow) 25%, var(--yellow) 75%, var(--red) 75%);
 	background: linear-gradient(to bottom, var(--red) 25%, var(--yellow) 25%, var(--yellow) 75%, var(--red) 75%);
 } 
 
-.czech {
-	background: -webkit-linear-gradient(top, white 50%, var(--red) 50%);
-	background: linear-gradient(to bottom, white 50%, var(--red) 50%);		
+.CZ {
+    background: url(""<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2048" height="2048" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd"><path style="fill:#d7141a" d="M255.999 1024h1536v461.501h-1536z"/><path style="fill:#11457e" d="M255.999 1485.5v-923l779.861 461.48z"/><path style="fill:#eee" d="M1035.83 1024H1792V562.5H255.999l779.861 461.48z"/><path style="fill:none" d="M0 0h2048v2048H0z"/></svg>"");
 
-	.triangle {
-		width: 0;
-		height: 0;
-		border-left: 75px solid var(--blue);	
-		border-top: 75px solid transparent;
-		border-bottom: 75px solid transparent;
-	}
 }
+
