@@ -2,7 +2,6 @@ import "./landing.css";
 import trainSunset from "../assets/train-sunset.jpg";
 
 export default function Landing() {
-  
   return (
     <section className="trains__landing">
         <div style={{ backgroundImage: `url(${trainSunset})` }} className="trains__landing__image">

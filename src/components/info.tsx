@@ -1,3 +1,4 @@
+import "./info.css";
 import tripImage1 from "../assets/train-nature.jpg";
 import tripImage2 from "../assets/train-sunset.jpg";
 import tripImage3 from "../assets/train-people.jpg";
@@ -28,7 +29,7 @@ export default function Information() {
             <div className="trains-info__container">
                 <h1>Welcome to Rhaetian Railway Shop</h1>
                 <div className="trains-info__container__text">
-                    <h3>Experience wonders of nature with us</h3>
+                    <h3>Experience wonders of nature with our railway.</h3>
                     <p>
                         We give you the opportunity to experience the most beautiful landscapes in Switzerland. Enjoy the ride through Grisons with our culinary delights
                         or enjoy historical rides through steam locomotives. Be inspired with natura and culture.
@@ -36,13 +37,15 @@ export default function Information() {
                 </div>
                 <div className="trains-info__offers">
                     <h3>Our offers</h3>
-                    {Trips_array.map((trip) => (
-                        <div className="trains-info__offers__trip">
-                            <img src={trip.image} alt={trip.title} />
-                            <h6>{trip.title}</h6>
-                            <p>{trip.description}</p>
-                        </div>
-                    ))}
+                    <div className="trains-info__offers__trip__container">
+                        {Trips_array.map((trip) => (
+                            <div className="trains-info__offers__trip">
+                                <img src={trip.image} alt={trip.title} />
+                                <h6>{trip.title}</h6>
+                                <p>{trip.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
