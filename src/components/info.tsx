@@ -38,8 +38,8 @@ export default function Information() {
                 <div className="trains-info__offers">
                     <h3>Our offers</h3>
                     <div className="trains-info__offers__trip__container">
-                        {Trips_array.map((trip) => (
-                            <div className="trains-info__offers__trip">
+                        {Trips_array.map((trip, index) => (
+                            <div key={index} className="trains-info__offers__trip">
                                 <img src={trip.image} alt={trip.title} />
                                 <h6>{trip.title}</h6>
                                 <p>{trip.description}</p>

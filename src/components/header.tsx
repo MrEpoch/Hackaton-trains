@@ -7,24 +7,42 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { useEffect, useState } from "react";
 import "./header.css";
 import { US, CZ, CH } from "country-flag-icons/react/3x2";
 import { Menu, MenuItem, Fade, Drawer, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
+import { ResizeObserver } from "@juggle/resize-observer";
+
+
 
 export default function Header() {
   const [lang, setLang] = useState<string>("EN");
   const [langAnchor, setLangAnchor] = useState<null | HTMLElement>(null);
   const [hiddenDrawer, setHiddenDrawer] = useState<boolean>(false);
+  const [isReducedHeader, setIsReducedHeader] = useState<boolean>(false);
 
+  const [reducedHeaderAnchor, setReducedHeaderAnchor] = useState<null | HTMLElement>(null);
   const open = Boolean(langAnchor);
+  const open_reduced = Boolean(reducedHeaderAnchor);
+
+  const checkHeaderSize = () => {
+        if (document.body.clientWidth > 550) setIsReducedHeader(true)
+        else setIsReducedHeader(false);
+  }
+
+    const ro = new ResizeObserver(() => {
+        checkHeaderSize();
+    });
+    ro.observe(document.body);
 
   useEffect(() => {
     const valNavigator: string = navigator.language;
     if (valNavigator === "CZ") setLang("CZ");
     else if (valNavigator === "CH") setLang("CH");
     else setLang("EN");
+
   }, []);
 
   const flag_array = [
@@ -48,8 +66,14 @@ export default function Header() {
         <InfoIcon />,
         <ContactSupportIcon />,
         <LocalLibraryIcon />
-
   ]
+
+  const buttonHeaderContent = [
+     "shop",
+     <ShoppingCartIcon />,
+     <PersonIcon />,
+     <SearchIcon />
+  ];
 
   return (
     <header className="trains-header">
@@ -221,16 +245,33 @@ export default function Header() {
         >
           {lang && flag_array.filter((item) => item.lang === lang)[0].flag}
         </button>
-        <button className="header__link_shop">Shop</button>
-        <button className="header__link_cart">
-          <ShoppingCartIcon />
-        </button>
-        <button className="header__link_user">
-          <PersonIcon />
-        </button>
-        <button className="header__link_search">
-          <SearchIcon />
-        </button>
+        {isReducedHeader ? (
+        <>
+            {buttonHeaderContent.map((buttonContent, index) => (
+                <button key={index} className="header__link__item">
+                    {buttonContent}
+                </button>
+            ))}
+        </>) : (
+            <>
+                <button onClick={(event) => { setReducedHeaderAnchor(event.currentTarget) }} className="header__link__mobile">
+                   <MoreVertIcon /> 
+                </button>
+                <Menu 
+                    MenuListProps={{ disablePadding: true }}
+                    className="trains-mobile-header__reduced"
+                    open={open_reduced}
+                    onClose={() => setReducedHeaderAnchor(null)}
+                    anchorEl={reducedHeaderAnchor}
+                >
+                    {
+                        buttonHeaderContent.map((buttonHeaderContent, index) => (
+                            <MenuItem className="header__reduced__button__item" key={index} onClick={() => setReducedHeaderAnchor(null)}>{buttonHeaderContent}</MenuItem>
+                        ))
+                    }
+                </Menu>
+            </>
+        )}
         <button onClick={() => setHiddenDrawer(true)} className="header__link_menu">
           Menu <MenuIcon />
         </button>
@@ -238,7 +279,6 @@ export default function Header() {
         <Menu
             MenuListProps={{ disablePadding: true }}
             open={open}
-            TransitionComponent={Fade}
             onClose={() => setLangAnchor(null)}
             anchorEl={langAnchor}
             className="header__lang"
