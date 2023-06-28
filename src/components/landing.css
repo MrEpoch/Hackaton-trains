@@ -37,7 +37,6 @@
     height: 700px;
     display: grid;
     position: relative;
-    background-attachment: fixed;
 }
 
 .trains__landing__image__text {
