@@ -52,4 +52,5 @@
 .header__lang_item {
   cursor: pointer;
   background-color: var(--system-color)!important;
+   color: white!important;
 }

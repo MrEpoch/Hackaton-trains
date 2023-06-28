@@ -12,7 +12,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useEffect, useState } from "react";
 import "./header.css";
 import { US, CZ, CH } from "country-flag-icons/react/3x2";
-import { Menu, MenuItem, Fade, Drawer, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
+import { Menu, MenuItem, Drawer, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
 import { ResizeObserver } from "@juggle/resize-observer";
 
 
@@ -259,14 +259,14 @@ export default function Header() {
                 </button>
                 <Menu 
                     MenuListProps={{ disablePadding: true }}
-                    className="trains-mobile-header__reduced"
+                    className="header__lang"
                     open={open_reduced}
                     onClose={() => setReducedHeaderAnchor(null)}
                     anchorEl={reducedHeaderAnchor}
                 >
                     {
                         buttonHeaderContent.map((buttonHeaderContent, index) => (
-                            <MenuItem className="header__reduced__button__item" key={index} onClick={() => setReducedHeaderAnchor(null)}>{buttonHeaderContent}</MenuItem>
+                            <MenuItem className="header__lang_item" key={index} onClick={() => setReducedHeaderAnchor(null)}>{buttonHeaderContent}</MenuItem>
                         ))
                     }
                 </Menu>
