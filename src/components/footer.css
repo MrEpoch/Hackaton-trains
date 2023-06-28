@@ -1,0 +1,36 @@
+.trains-footer {
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.trains-footer__container__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.trains-footer__social__icons {
+    display: flex;
+    gap: 1rem;
+}
+ 
+.trains-footer__social__icons > * {
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.trains-footer__social__icons > *:hover {
+    background-color: white;
+    color: var(--main-color);
+}

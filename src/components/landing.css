@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
 .trains__landing {
   min-height: 100%;
@@ -40,16 +39,16 @@
 }
 
 .trains__landing__image__text {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Monoton', cursive;
     font-size: 5rem;
     justify-self: center;
     align-self: center;
-    color: black;
+    color: #d0d0d0;
     text-align: center;
     text-shadow: 0 0 2px var(--system-color);
 }
 
-.custom-shape-divider-bottom-1687887795 {
+.custom-shape-divider-bottom-1687941412 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -58,13 +57,13 @@
     line-height: 0;
 }
 
-.custom-shape-divider-bottom-1687887795 svg {
+.custom-shape-divider-bottom-1687941412 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 124px;
+    height: 171px;
 }
 
-.custom-shape-divider-bottom-1687887795 .shape-fill {
+.custom-shape-divider-bottom-1687941412 .shape-fill {
     fill: #000000;
 }

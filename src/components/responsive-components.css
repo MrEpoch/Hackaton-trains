@@ -12,10 +12,42 @@
     }
 
     .trains__landing__image__text {
-        font-size: 3.5rem!important;
+        font-size: 2.5rem!important;
     }
 
     .header__links {
         width: auto!important;
+    }
+
+    .trains-footer__social__icons {
+        gap: 0.4rem!important;
+    }
+ 
+    .trains-footer__social__icons > * {
+        padding: 5px!important;
+    }
+}
+
+@media (max-width: 550px) {
+    .trains-header__logo {
+        width: 9rem;
+        aspect-ratio: 1 / 5;
+    }
+
+    .trains__landing__image__text {
+        padding: 10px;
+        font-size: 1.8rem!important;
+    }
+
+    .header__links {
+        width: 100%!important;
+    }
+
+    .header__links > button {
+        padding: 10px!important;
+    }
+    .trains-footer__social__icons {
+        gap: 0.4rem!important;
+        margin-right: 0.5rem!important;
     }
 }

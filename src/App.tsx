@@ -6,6 +6,8 @@ import Information from "./components/info";
 import { useState, useEffect } from "react";
 import { CircularProgress } from "@mui/material";
 import BuyTicket from "./components/buyTicket";
+import Footer from "./components/footer";
+import JumptingDot from "./components/jumpting_dot";
 
 function App() {
   
@@ -22,8 +24,10 @@ function App() {
             <>
                 <Header />
                 <Landing />
+                <JumptingDot />
                 <Information />
                 <BuyTicket />
+                <Footer />
             </>
       }
     </>

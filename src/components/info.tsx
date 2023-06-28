@@ -27,7 +27,7 @@ export default function Information() {
     return (
         <section className="trains-info">
             <div className="trains-info__container">
-                <h1>Welcome to Rhaetian Railway Shop</h1>
+                <h1>Welcome to the Rhaetian Railway Shop</h1>
                 <div className="trains-info__container__text">
                     <h3>Experience wonders of nature with our railway.</h3>
                     <p>
